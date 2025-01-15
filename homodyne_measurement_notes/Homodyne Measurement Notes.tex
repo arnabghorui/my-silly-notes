@@ -96,13 +96,16 @@
 		\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi}) &= \half \sum_{jk} (\xx-\xi) _j H_{jk} (\xx-\xi) _j \notag \\
 		&= \half \sum_{jk} (\dd{-\xi} \hat x_j \dd{\xi})  H_{jk} (\dd{-\xi} \hat x_k \dd{\xi})  \notag\\
 		&= \half \sum_{jk} (\dd{-\xi} \hat x_j H_{jk} \hat x_k \dd{\xi}) \notag\\
-		\hat{H}'&= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
+		\hat{H}'&= \half \dd{-\bar{\xi}} (\xx^T H \xx) \dd{\bar{\xi}}
 	\end{align} 
-	\vspace*{-\abovedisplayskip}
+	One takeaway from  the above is that, it's enough to study the property of the hamiltonian, $\hat{H} = \half \xx^T H \xx$.
+	
+	%\vspace*{-\abovedisplayskip}
 	\textbf{Evolution of quadratures:} 
 	\begin{itemize}
 		\item Heisenberg picture: $\dot{\hat O} = i[\hat{H}, \hat{O}]$.
-		\item Using the above we get, time ebolution of quadratures as, $\dot{\xx} = \Omega H \xx$. Solving it we get, $\xx(t) = e^{\Omega H} \xx(0)$.
+		\item Using the above we get, time evolution of quadratures as, $\dot{\xx} = \Omega H \xx$. Solving it we get, $\xx(t) = e^{\Omega H} \xx(0)$.
+		
 		
 	\end{itemize}
 	
@@ -133,6 +136,11 @@
 	One may write most general second order hamiltonian of $n$-modes as, $\hat{H}=\half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}} $.
 	First note that, $(\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) = \dd{-\bar{\xi}} \xx^2 \dd{\bar{\xi}}$. Then, 
 	it is clear that, $ e^{i\hat{H}} =  \dd{-\bar{\xi}} e^{\frac{i}{2}\xx^T H \xx } \dd{\bar{\xi}}$.
+	\begin{itemize}
+		\item Define, $\hat S = e^{\frac{i}{2} \xx^T H \xx}$ and $S = e^{\Omega H}$.
+		\item $\hat S_H \xx \hat S_H^\dagger = S_H \xx$.
+		
+	\end{itemize}
 
 
 
