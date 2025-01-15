@@ -84,7 +84,7 @@
 	
 	\section{Gaussian States}
 	
-	\subsection{Quadratic Hamiltonian and Gaussian States}
+	\subsection{Quadratic Hamiltonian and evolution}
 	
 	The most general quadratic/second-order hamiltonian can be written as follows.
 	\begin{equation}
@@ -98,6 +98,15 @@
 		&= \half \sum_{jk} (\dd{-\xi} \hat x_j H_{jk} \hat x_k \dd{\xi}) \notag\\
 		\hat{H}'&= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
 	\end{align} 
+	\vspace*{-\abovedisplayskip}
+	\textbf{Evolution of quadratures:} 
+	\begin{itemize}
+		\item Heisenberg picture: $\dot{\hat O} = i[\hat{H}, \hat{O}]$.
+		\item Using the above we get, time ebolution of quadratures as, $\dot{\xx} = \Omega H \xx$. Solving it we get, $\xx(t) = e^{\Omega H} \xx(0)$.
+		
+	\end{itemize}
+	
+	\subsection{Gaussian state}
 	\begin{definition}[Gaussian State]
 		Gaussian states are defined as all the ground and thermal states of second-order Hamiltonians [eq.\ref{eq:quad_ham}] with positive definite Hamiltonian matrix H > 0.
 	\end{definition}
