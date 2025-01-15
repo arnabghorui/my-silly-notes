@@ -32,7 +32,11 @@
 		\begin{equation}
 			[\xx, \xx^T] = i\Omega, \tag{Canonical Commutation Relation}
 		\end{equation}
-		 where, think the commutation relation as element wise commutator.
+		 where, think the commutation relation as element wise commutator. Some properties of $\Omega$:
+		 \begin{itemize}
+		 	\item[*] $\Omega^T=-\Omega$(Anti-symmetric)
+		 	\item[*] $\Omega^2 = \mathbbm{1}_{2n} \implies \Omega^T\Omega=\mathbbm{1}_{2n}$ (Orthogonal)
+		 \end{itemize}
 		\item Borrowing from the optical and field-theoretical terminologies, canonical degrees	of freedom are also referred to as ‘\textit{modes}’.
 		\item $\hat a_j = \frac{\hat x_j + \hat p_j}{\sqrt 2}$, annihilation operator.
 		\item \textbf{BCH formula: }$e^{A+B}=e^A e^B e^{-\half[A,B]}$	for operators $A,B$ if $[A,[A,B]]=[B,[B,A]]=0$
@@ -52,7 +56,13 @@
 		\item $\dd{\xi}^\dagger \dd{\xi} = \mathbbm{1}$ (Unitary operator).
 		\item $\dd{\xi}\dd{\xi}=\dd{2\xi}$.
 		\item $\dd{\xi}\dd{\eta} = e^{-\frac{i}{2}\xi^T\Omega \eta}\ \dd{\xi+\eta}$. (\textbf{Prove!})
-		\item$\dd{-\bar{\xi}} \xx \dd{\bar{\xi}} = \xx - \bar{\xi}$ (\textbf{Prove!})
+		\item$\dd{-\bar{\xi}} \xx \dd{\bar{\xi}} = \xx - \bar{\xi}$\\
+		\textit{Proof:} For the $k^\text{th}$ component of $\xx$ \textit{i.e.} $\hat x_k$, we have, \begin{align*}
+			\dd{-\xi} \hat x_k \dd{\xi} &= e^{-i\xi^T \Omega\xx}\hat x_k e^{i\xi^T \Omega\xx} \\
+			&= \hat x_k -i\left[\xi^T\Omega\xx, \hat x_k \right] + \frac{i^2}{2}\left[ \xi^T\Omega\xx, \left[\xi^T\Omega\xx, \hat x_k \right]   \right] + \cdots \hfil (\textit{using BCH})\\
+			&=\hat x_k -\xi_k
+		\end{align*}
+		From here the result follows directly.
 		\item $\dd{-\bar{\xi}} = \dd{\bar{\xi}}^\dagger$.
 	\end{itemize}
 	
@@ -66,6 +76,8 @@
 			S\in Sp_{2n,\mathbbm{R}} \iff S\Omega S^T=\Omega
 		\end{equation}
 	\end{definition}
+	\textbf{Evolution:}
+	
 	
 	\subsection{Normal Modes}
 	\textbf{TODO: }Definition, etc.
@@ -81,8 +93,11 @@
 	\end{equation}
 	Here, $\mathbf{\xi}$ is a $2n$-dimensional real vector. $H$ is a $2n\times 2n$ symmetric matrix called \textit{Hamiltonian matrix}, not to be confused with Hamiltonian. It can always be taken as  a symmetric matrix because, the antisymmetric part with give a term proportional to identity matrix due to \textbf{CCR}, which can always be discarded. If we take $\bar{\mathbf{\xi}}=H^{-1}\xi$, then $\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi})$ is equivalent to $\hat{H}$ up to some additive constant term. Using the fourth property from section \ref{sec:displacement_operators} we can write,
 	\begin{align}
-		\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi}) &= \half (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}})^T H (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) \\ &= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
-	\end{align} See Serafini (eq. 3.17) for proof.
+		\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi}) &= \half \sum_{jk} (\xx-\xi) _j H_{jk} (\xx-\xi) _j \notag \\
+		&= \half \sum_{jk} (\dd{-\xi} \hat x_j \dd{\xi})  H_{jk} (\dd{-\xi} \hat x_k \dd{\xi})  \notag\\
+		&= \half \sum_{jk} (\dd{-\xi} \hat x_j H_{jk} \hat x_k \dd{\xi}) \notag\\
+		\hat{H}'&= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
+	\end{align} 
 	\begin{definition}[Gaussian State]
 		Gaussian states are defined as all the ground and thermal states of second-order Hamiltonians [eq.\ref{eq:quad_ham}] with positive definite Hamiltonian matrix H > 0.
 	\end{definition}
