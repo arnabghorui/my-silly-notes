@@ -37,6 +37,40 @@
 		\item \textbf{BCH formula: }$e^{A+B}=e^A e^B e^{-\half[A,B]}$	for operators $A,B$ if $[A,[A,B]]=[B,[B,A]]=0$
 	\end{itemize}
 	
+	\section{Prerequisits}
+	\subsection{Displacement operators}
+	\begin{definition}[Weyl operators]
+		\begin{equation}
+			\dd{\xi} =e^{i \xi^T \Omega \xx} = e^{i(\hat{x}_1\xi_2-\hat{p}_1\xi_2)}\otimes\cdots\otimes e^{i(\hat{x}_n\xi_{2n}-\hat{p}_n\xi_{2n-1})},
+		\end{equation}
+		where, $\xi \in \mathbbm{R}^{2n}$.
+	\end{definition}
+	
+	\textbf{Properties:}	\begin{itemize}
+		\item $\dd{\xi}^\dagger \dd{\xi} = \mathbbm{1}$ (Unitary operator).
+		\item $\dd{\xi}\dd{\xi}=\dd{2\xi}$.
+		\item $\dd{\xi}+\dd{\eta} = e^{-\frac{i}{2}\xi^T\Omega \eta}\ \dd{\xi+\eta}$. (\textbf{Prove!})
+		\item$\dd{-\bar{\xi}} \xx \dd{\bar{\xi}} = \xx - \bar{\xi}$ (\textbf{Prove!})
+		\item $\dd{-\bar{\xi}} = \dd{\bar{\xi}}^\dagger$.
+	\end{itemize}
+	Using the above fourth property we can write,
+	\begin{align}
+		\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi}) &= \half (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}})^T H (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) \\ &= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
+	\end{align} See Serafini (eq. 3.17) for proof.
+	
+	
+	\subsection{Symplectic Group}
+	\textbf{TODO:} Linear canonical transformation and Symplectic group, Canonical transformations are those which respect  \textbf{CCR}.
+	\begin{definition}
+		[Symplectic group]
+		\begin{equation}
+			S\in Sp_{2n,\mathbbm{R}} \iff S\Omega S^T=\Omega
+		\end{equation}
+	\end{definition}
+	
+	\subsection{Normal Modes}
+	\textbf{TODO: }Definition, etc.
+	
 	\section{Gaussian States}
 	
 	\subsection{Quadratic Hamiltonian and Gaussian States}
@@ -66,38 +100,7 @@
 		\item Gaussian states can be generated First and second moment of quadrature. We'll talk about them later.
 	\end{itemize}
 	
-	\subsection{Displacement operators}
-	\begin{definition}[Weyl operators]
-		\begin{equation}
-			\dd{\xi} =e^{i \xi^T \Omega \xx} = e^{i(\hat{x}_1\xi_2-\hat{p}_1\xi_2)}\otimes\cdots\otimes e^{i(\hat{x}_n\xi_{2n}-\hat{p}_n\xi_{2n-1})},
-		\end{equation}
-		where, $\xi \in \mathbbm{R}^{2n}$.
-	\end{definition}
-
-\textbf{Properties:}	\begin{itemize}
-		\item $\dd{\xi}^\dagger \dd{\xi} = \mathbbm{1}$ (Unitary operator).
-		\item $\dd{\xi}\dd{\xi}=\dd{2\xi}$.
-		\item $\dd{\xi}+\dd{\eta} = e^{-\frac{i}{2}\xi^T\Omega \eta}\ \dd{\xi+\eta}$. (\textbf{Prove!})
-		\item$\dd{-\bar{\xi}} \xx \dd{\bar{\xi}} = \xx - \bar{\xi}$ (\textbf{Prove!})
-		\item $\dd{-\bar{\xi}} = \dd{\bar{\xi}}^\dagger$.
-	\end{itemize}
-	Using the above fourth property we can write,
-	\begin{align}
-		\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi}) &= \half (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}})^T H (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) \\ &= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
-	\end{align} See Serafini (eq. 3.17) for proof.
 	
-	
-	\subsection{Symplectic Group}
-	\textbf{TODO:} Linear canonical transformation and Symplectic group, Canonical transformations are those which respect  \textbf{CCR}.
-	\begin{definition}
-		[Symplectic group]
-		\begin{equation}
-			S\in Sp_{2n,\mathbbm{R}} \iff S\Omega S^T=\Omega
-		\end{equation}
-	\end{definition}
-	
-	\subsection{Normal Modes}
-	\textbf{TODO: }Definition, etc.
 	
 
 \end{document}
