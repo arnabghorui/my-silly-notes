@@ -1,0 +1,74 @@
+\documentclass[english,10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{babel}
+\newtheorem{definition}{Definition}
+
+\title{Notes on Homodyne Measurement}
+\author{Arnab Ghorui}
+
+% shorthands
+\newcommand{\rr}{\hat {\textbf{r}}}
+\newcommand{\xx}{\hat{\textbf{x}}}
+\newcommand{\ham}{\hat H}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\tr}[1]{\text{Tr}\left[{#1}\right]}
+\begin{document}
+	\maketitle
+	
+	\section{Notations}
+	\begin{itemize}
+		\item $\xx= (\hat x_1, \hat p_1,\cdots,\hat x_n, \hat p_n)^T$, vector of cannonical operators.
+		\item $\Omega = \bigoplus_{j=1}^n \Omega_1$, where $\Omega_1 = \begin{pmatrix}
+			0 & 1 \\ -1 & 0
+		\end{pmatrix}$.\\
+		Note that, for $n=1$, $[\hat x_i,\hat x_j] = i[\Omega_1]_{ij}$. Compactly, 
+		\begin{equation}
+			[\xx, \xx^T] = i\Omega, \tag{Canonical Commutation Relation}
+		\end{equation}
+		 where, think the commutation relation as element wise commutator.
+		\item Borrowing from the optical and field-theoretical terminologies, canonical degrees	of freedom are also referred to as ‘\textit{modes}’.
+		\item $\hat a_j = \frac{\hat x_j + \hat p_j}{\sqrt 2}$, annihilation operator.
+	\end{itemize}
+	
+	\section{Gaussian States}
+	
+	\subsection{Quadratic Hamiltonian and Gaussian States}
+	The most general quadratic/second-order hamiltonian can be written as follows.
+	\begin{equation}
+		\label{eq:quad_ham}
+		\ham = \half \xx^T H \xx + \xx^T \mathbf{\xi}.
+	\end{equation}
+	Here, $\mathbf{\xi}$ is a $2n$-dimensional real vector. $H$ is a $2n\times 2n$ symmetric matrix called \textit{Hamiltonian matrix}, not to be confused with Hamiltonian. It can alsways be taken as  a symmetric matrix because, the antisymmetric part with give a term proportional to identity matrix due to \textbf{CCR}, which can always be discarded. If we take $\bar{\mathbf{\xi}}=H^{-1}\xi$, then $\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi})$ is equaivalent to $\hat{H}$ upto some additive constant term.
+	\begin{definition}[Gaussian State]
+		Gaussian states are defined as all the ground and thermal states of second-order Hamiltonians [eq.\ref{eq:quad_ham}] with positive definite Hamiltonian matrix H > 0.
+	\end{definition}
+	Thus a \textit{Gaussian state} can be written as,
+	\begin{equation}
+		\label{eq:gaussian_state}
+		\rho_G = \frac{e^{-\beta \hat{H}}}{\tr{e^{-\beta \hat{H}}}},
+	\end{equation}
+	where, $\beta >0$ and $\hat{H}$ is defined in Eq. \ref{eq:quad_ham}. Ground state is the limiting value,
+	\begin{equation}
+		\label{eq:ground_state}
+		\rho_G = \lim_{\beta\to \infty} \frac{e^{-\beta \hat{H}}}{\tr{e^{-\beta \hat{H}}}}.
+	\end{equation}
+	\textbf{Note:}
+	\begin{itemize}
+		\item All Gaussian states are mixed state by construction, except for the ground state.
+		\item Gaussian states are parametrized by $\beta,\ \mathbf{\xi}$ and $H$. Though $\beta$ is redundant and can be absorbed into $H$, it allows one to single out pure Gausian states as in Eq. \ref{eq:ground_state}.
+	\end{itemize}
+	
+	\subsection{Displacement operators}
+	
+	\begin{definition}[Weyl operators]
+		\begin{equation}
+			D
+		\end{equation}
+	\end{definition}
+	
+
+\end{document}
