@@ -6,6 +6,7 @@
 \usepackage{amsthm}
 \usepackage{bbm}
 \usepackage{babel}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \newtheorem{definition}{Definition}
 
 \title{Notes on Homodyne Measurement}
@@ -39,6 +40,7 @@
 	
 	\section{Prerequisits}
 	\subsection{Displacement operators}
+	\label{sec:displacement_operators}
 	\begin{definition}[Weyl operators]
 		\begin{equation}
 			\dd{\xi} =e^{i \xi^T \Omega \xx} = e^{i(\hat{x}_1\xi_2-\hat{p}_1\xi_2)}\otimes\cdots\otimes e^{i(\hat{x}_n\xi_{2n}-\hat{p}_n\xi_{2n-1})},
@@ -49,14 +51,11 @@
 	\textbf{Properties:}	\begin{itemize}
 		\item $\dd{\xi}^\dagger \dd{\xi} = \mathbbm{1}$ (Unitary operator).
 		\item $\dd{\xi}\dd{\xi}=\dd{2\xi}$.
-		\item $\dd{\xi}+\dd{\eta} = e^{-\frac{i}{2}\xi^T\Omega \eta}\ \dd{\xi+\eta}$. (\textbf{Prove!})
+		\item $\dd{\xi}\dd{\eta} = e^{-\frac{i}{2}\xi^T\Omega \eta}\ \dd{\xi+\eta}$. (\textbf{Prove!})
 		\item$\dd{-\bar{\xi}} \xx \dd{\bar{\xi}} = \xx - \bar{\xi}$ (\textbf{Prove!})
 		\item $\dd{-\bar{\xi}} = \dd{\bar{\xi}}^\dagger$.
 	\end{itemize}
-	Using the above fourth property we can write,
-	\begin{align}
-		\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi}) &= \half (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}})^T H (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) \\ &= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
-	\end{align} See Serafini (eq. 3.17) for proof.
+	
 	
 	
 	\subsection{Symplectic Group}
@@ -74,12 +73,16 @@
 	\section{Gaussian States}
 	
 	\subsection{Quadratic Hamiltonian and Gaussian States}
+	
 	The most general quadratic/second-order hamiltonian can be written as follows.
 	\begin{equation}
 		\label{eq:quad_ham}
 		\ham = \half \xx^T H \xx + \xx^T \mathbf{\xi}.
 	\end{equation}
-	Here, $\mathbf{\xi}$ is a $2n$-dimensional real vector. $H$ is a $2n\times 2n$ symmetric matrix called \textit{Hamiltonian matrix}, not to be confused with Hamiltonian. It can alsways be taken as  a symmetric matrix because, the antisymmetric part with give a term proportional to identity matrix due to \textbf{CCR}, which can always be discarded. If we take $\bar{\mathbf{\xi}}=H^{-1}\xi$, then $\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi})$ is equivalent to $\hat{H}$ up to some additive constant term.
+	Here, $\mathbf{\xi}$ is a $2n$-dimensional real vector. $H$ is a $2n\times 2n$ symmetric matrix called \textit{Hamiltonian matrix}, not to be confused with Hamiltonian. It can always be taken as  a symmetric matrix because, the antisymmetric part with give a term proportional to identity matrix due to \textbf{CCR}, which can always be discarded. If we take $\bar{\mathbf{\xi}}=H^{-1}\xi$, then $\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi})$ is equivalent to $\hat{H}$ up to some additive constant term. Using the fourth property from section \ref{sec:displacement_operators} we can write,
+	\begin{align}
+		\hat{H}' = \half (\xx-\bar{\xi})^T H (\xx-\bar{\xi}) &= \half (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}})^T H (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) \\ &= \half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}}
+	\end{align} See Serafini (eq. 3.17) for proof.
 	\begin{definition}[Gaussian State]
 		Gaussian states are defined as all the ground and thermal states of second-order Hamiltonians [eq.\ref{eq:quad_ham}] with positive definite Hamiltonian matrix H > 0.
 	\end{definition}
@@ -100,7 +103,14 @@
 		\item Gaussian states can be generated First and second moment of quadrature. We'll talk about them later.
 	\end{itemize}
 	
-	
-	
+	\section{Gaussian operations}
+	Gaussian operations are CP-maps those take Gaussian states to Gaussian states.
+	\subsection{Gaussian Unitaries}
+	One may write most general second order hamiltonian of $n$-modes as, $\hat{H}=\half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}} $.
+	First note that, $(\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) = \dd{-\bar{\xi}} \xx^2 \dd{\bar{\xi}}$. Then, 
+	it is clear that, $ e^{i\hat{H}} =  \dd{-\bar{\xi}} e^{\frac{i}{2}\xx^T H \xx } \dd{\bar{\xi}}$.
+
+
+
 
 \end{document}
