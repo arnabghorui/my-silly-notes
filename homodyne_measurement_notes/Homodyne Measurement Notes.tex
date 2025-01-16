@@ -103,9 +103,16 @@
 	%\vspace*{-\abovedisplayskip}
 	\textbf{Evolution of quadratures:} 
 	\begin{itemize}
-		\item Heisenberg picture: $\dot{\hat O} = i[\hat{H}, \hat{O}]$.
-		\item Using the above we get, time evolution of quadratures as, $\dot{\xx} = \Omega H \xx$. Solving it we get, $\xx(t) = e^{\Omega H} \xx(0)$.
-		
+		\item Heisenberg picture evolution:
+		\label{eq:heisenberg}
+		\begin{equation}
+			 \dot{\hat O} = i[\hat{H}, \hat{O}].
+		\end{equation}
+		\item Using the above we get, time evolution of quadratures as, $\dot{\xx} = \Omega H \xx$. Solving it gets,
+		\begin{equation}
+			\label{eq:symplectic_evolution}
+			 \xx(t) = e^{\Omega H} \xx(0)
+		\end{equation}
 		
 	\end{itemize}
 	
@@ -133,15 +140,22 @@
 	\section{Gaussian operations}
 	Gaussian operations are CP-maps those take Gaussian states to Gaussian states.
 	\subsection{Gaussian Unitaries}
-	One may write most general second order hamiltonian of $n$-modes as, $\hat{H}=\half \dd{-\bar{\xi}} \xx^T H \xx \dd{\bar{\xi}} $.
+	One may write most general second order hamiltonian of $n$-modes as, $\hat{H}=\half \dd{-\bar{\xi}} (\xx^T H \xx )\dd{\bar{\xi}} $.
 	First note that, $(\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) (\dd{-\bar{\xi}} \xx \dd{\bar{\xi}}) = \dd{-\bar{\xi}} \xx^2 \dd{\bar{\xi}}$. Then, 
 	it is clear that, $ e^{i\hat{H}} =  \dd{-\bar{\xi}} e^{\frac{i}{2}\xx^T H \xx } \dd{\bar{\xi}}$.
+	
+	%\vspace{.1cm}\\
+	Let's introduce some notations and relations:
 	\begin{itemize}
-		\item Define, $\hat S = e^{\frac{i}{2} \xx^T H \xx}$ and $S = e^{\Omega H}$.
-		\item $\hat S_H \xx \hat S_H^\dagger = S_H \xx$.
-		
+		\item  $\hat S = e^{\frac{i}{2} \xx^T H \xx}$\hfill (Free Hamiltonian unitary)
+		\item  $S = e^{\Omega H}$\hfill(Evolution of quadratures, Eq. \ref{eq:symplectic_evolution})
+		\item $\hat S \xx \hat S^\dagger = S \xx$ \hfill (\textbf{Check!})
+		\item Now using the above we can write
+		\begin{align}
+			\hat S 
+		\end{align}
 	\end{itemize}
-
+	
 
 
 
